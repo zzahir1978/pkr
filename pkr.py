@@ -125,11 +125,11 @@ ph_adun_total = ph_adun['undi_adun'].sum()
 st.header('Parlimen')
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric(label='BN',value=f'{bn_parlimen_total:,.0f}',delta=f'{((bn_parlimen_total/total)*100):.0f}')
+    st.metric(label='BN',value=f'{bn_parlimen_total:,.0f}',delta=f'{((bn_parlimen_total/total)*100):.0f}%')
 with col2:
-    st.metric('PN',f'{pn_parlimen_total:,.0f}')
+    st.metric(label='PN',value=f'{pn_parlimen_total:,.0f}',delta=f'{((pn_parlimen_total/total)*100):.0f}%')
 with col3:
-    st.metric('PH',f'{ph_parlimen_total:,.0f}')
+    st.metric(label='PH',value=f'{ph_parlimen_total:,.0f}',delta=f'{((ph_parlimen_total/total)*100):.0f}%')
 #st.dataframe(df1)
 
 fig_bar = make_subplots(shared_xaxes=True, specs=[[{'secondary_y': True}]])
