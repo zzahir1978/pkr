@@ -121,16 +121,14 @@ bn_adun_total = bn_adun['undi_adun'].sum()
 pn_adun_total = pn_adun['undi_adun'].sum()
 ph_adun_total = ph_adun['undi_adun'].sum()
 
-
 st.header('Parlimen')
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric(label='BN',value=f'{bn_parlimen_total:,.0f}',value=f'{((bn_parlimen_total/total)*100):.0f}%')
+    st.metric(label='BN',value=f'{bn_parlimen_total:,.0f}')
 with col2:
-    st.metric(label='PN',value=f'{pn_parlimen_total:,.0f}',delta=f'{((pn_parlimen_total/total)*100):.0f}%')
+    st.metric(label='PN',value=f'{pn_parlimen_total:,.0f}')
 with col3:
-    st.metric(label='PH',value=f'{ph_parlimen_total:,.0f}',delta=f'{((ph_parlimen_total/total)*100):.0f}%')
-#st.dataframe(df1)
+    st.metric(label='PH',value=f'{ph_parlimen_total:,.0f}')
 
 fig_bar = make_subplots(shared_xaxes=True, specs=[[{'secondary_y': True}]])
 fig_bar.add_trace(go.Bar(x = ['BN','PN','PH'], y = [bn_parlimen_total,pn_parlimen_total,ph_parlimen_total],name='', 
@@ -182,7 +180,7 @@ col1, col2 = st.columns(2)
 col1.plotly_chart(fig_bar, use_container_width=True)
 col2.plotly_chart(fig_pie, use_container_width=True)
 
-
+st.dataframe(df1)
 
 # --- HIDE STREAMLIT STYLE ---
 
