@@ -112,6 +112,7 @@ ph_parlimen = df1[(df1['parti_parlimen']=='PH')]
 bn_parlimen_total = bn_parlimen['undi_parlimen'].sum()
 pn_parlimen_total = pn_parlimen['undi_parlimen'].sum()
 ph_parlimen_total = ph_parlimen['undi_parlimen'].sum()
+total = bn_parlimen_total+pn_parlimen_total+ph_parlimen_total
 #Adun
 bn_adun = df1[(df1['parti_adun']=='BN')]
 pn_adun = df1[(df1['parti_adun']=='PN')]
@@ -124,7 +125,7 @@ ph_adun_total = ph_adun['undi_adun'].sum()
 st.header('Parlimen')
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric('BN',f'{bn_parlimen_total:,.0f}')
+    st.metric(label='BN',value=f'{bn_parlimen_total:,.0f}',delta=(bn_parlimen_total/total))
 with col2:
     st.metric('PN',f'{pn_parlimen_total:,.0f}')
 with col3:
