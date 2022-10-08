@@ -16,7 +16,7 @@ image = Image.open('logo.jpg')
 st.set_page_config('PKR PRU15', ':inbox_tray:', layout='wide')         # https://www.webfx.com/tools/emoji-cheat-sheet/
 st.image(image, caption='')
 st.title('Pilihan Raya Umum 15')
-st.header('PKR - Perak Darul Ridzuan')
+st.header('Perak Darul Ridzuan')
 
 # Setting for utility database
 parlimens = ['parlimen']
@@ -180,7 +180,12 @@ col1, col2 = st.columns(2)
 col1.plotly_chart(fig_bar, use_container_width=True)
 col2.plotly_chart(fig_pie, use_container_width=True)
 
-st.dataframe(df1)
+df_parlimen = df1.groupby(['parlimen','parti_parlimen']).sum()
+df_parlimen = df_parlimen['undi_parlimen']
+df_adun = df1.groupby(['adun','parti_adun']).sum()
+df_adun = df_adun['undi_adun']
+st.dataframe(df_parlimen)
+st.dataframe(df_adun)
 
 # --- HIDE STREAMLIT STYLE ---
 
