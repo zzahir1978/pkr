@@ -1,0 +1,8 @@
+deta==1.1.0
+numpy==1.20.3
+pandas==1.3.4
+Pillow==9.2.0
+plotly==5.7.0
+streamlit==1.11.0
+streamlit_authenticator==0.1.5
+streamlit_option_menu==0.3.2
