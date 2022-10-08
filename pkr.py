@@ -30,10 +30,9 @@ undi_parlimens = ['undi_parlimen']
 undi_aduns = ['undi_adun']
 
 # Utility Database Interface
-deta_key = "c0jo61nr_Go2nxaHYyBCP5xTuLshRfDob2ZjuM3Hs"
-##DETA_KEY = st.secrets[deta_key]              # Key Name: 6yt5jj, Key Description: Project Key: 6yt5jj, Project Key: c0jo61nr_Go2nxaHYyBCP5xTuLshRfDob2ZjuM3Hs
-##deta = Deta(DETA_KEY)
-deta = Deta(deta_key)
+
+DETA_KEY = st.secrets["deta_key"]              
+deta = Deta(DETA_KEY)
 db = deta.Base('pkr_db')
 
 def insert_db(parlimen,adun,parti_parlimen,parti_adun,kawasan,undi_parlimen,undi_adun):
