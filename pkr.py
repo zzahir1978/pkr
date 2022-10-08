@@ -125,7 +125,7 @@ ph_adun_total = ph_adun['undi_adun'].sum()
 st.header('Parlimen')
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric(label='BN',value=f'{bn_parlimen_total:,.0f}',delta=(bn_parlimen_total/total))
+    st.metric(label='BN',value=f'{bn_parlimen_total:,.0f}',delta=(bn_parlimen_total/total)*100)
 with col2:
     st.metric('PN',f'{pn_parlimen_total:,.0f}')
 with col3:
