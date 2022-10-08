@@ -15,7 +15,6 @@ image = Image.open('logo.jpg')
 
 st.set_page_config('PKR PRU15', ':inbox_tray:', layout='wide')         # https://www.webfx.com/tools/emoji-cheat-sheet/
 st.image(image, caption='')
-#st.title(':inbox_tray:' + " " + 'Pilihan Raya Umum 15')
 st.title('Pilihan Raya Umum 15')
 st.header('PKR - Perak Darul Ridzuan')
 
